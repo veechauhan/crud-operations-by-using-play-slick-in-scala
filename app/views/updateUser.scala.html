@@ -1,0 +1,23 @@
+@(status:String)
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Crud Operations by using Play ,Slick in Scala</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <h4 style="color:green;">@status</h4>
+        <form method="GET" class="login-form" action="@routes.HomeController.updateUserNameByEmail("","")">
+        <input type="email" name="email" placeholder="current email" value="" required/>
+        <input type="text" name="name" placeholder="new name" value="" required/>
+        <button type="submit" >Update</button>
+        <p class="message"><a href="@routes.HomeController.getAllUsers">All Users</a></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>

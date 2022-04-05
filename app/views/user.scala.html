@@ -1,0 +1,33 @@
+@(users:Seq[User])
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    <title>Users</title>
+
+</head>
+<body>
+    <div class="form">
+<table class="center">
+    <tr>
+        <th>Email</th>
+        <th>Name</th>
+    </tr>
+    @for(user<-users){
+    <tr>
+        <td style="text-align:left">@user.email</td>
+        <td style="text-align:left">@user.name</td>
+    </tr>
+    }
+</table>
+    <h4><a style="color:green;" href="@routes.HomeController.index()">Add Users</a></h4>
+    <h4><a style="color:green;" href="@routes.HomeController.updateUserNameByEmail("","")">Update User</a></h4>
+    <h4><a style="color:green;" href="@routes.HomeController.deleteUserByEmail("")">Delete User</a></h4>
+
+</div>
+</body>
+</html>
