@@ -33,6 +33,7 @@ class HomeController @Inject()(
       userRepository.getUserByEmail(email).flatMap {
         case Some(_) =>Future(Ok("User already exist!"))
         case None => userRepository.addUser(user).map { _ =>
+
           Ok(views.html.index())
         }
       }
