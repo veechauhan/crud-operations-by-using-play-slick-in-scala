@@ -26,13 +26,15 @@ class HomeController @Inject()(
   def addUser(email:String,name:String): Action[AnyContent] = Action.async{
 
     implicit request =>
-      val user = User(
+      val user =
+        User(
        Some( email),
         name,
       )
       userRepository.getUserByEmail(email).flatMap {
         case Some(_) =>Future(Ok("User already exist!"))
         case None => userRepository.addUser(user).map { _ =>
+
           Ok(views.html.index())
         }
       }
