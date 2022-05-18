@@ -7,7 +7,9 @@ case class User(
                  name: String
                )
 
+
 case  class Person(name:String)
+
 
 object  User {
   implicit val userFormat: OFormat[User] = Json.format[User]
