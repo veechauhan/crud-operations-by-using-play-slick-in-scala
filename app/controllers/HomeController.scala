@@ -26,8 +26,7 @@ class HomeController @Inject()(
   def addUser(email:String,name:String): Action[AnyContent] = Action.async{
 
     implicit request =>
-      val user =
-        User(
+      val user = User(
        Some( email),
         name,
       )
